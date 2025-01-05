@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    // Function to find the missing number in the array
+    int missingNumber(vector<int>& nums) {
+        int n = nums.size();  // Get the size of the array, which corresponds to the largest number in the range
+        int sum = 0;  // Variable to store the sum of the elements in the array
+        
+        // Calculate the sum of elements in the array
+        for (int i = 0; i < n; i++) {
+            sum += nums[i];  // Add each element to the sum
+        }
+        
+        // The expected sum of numbers from 0 to n
+        int expectedSum = (n * (n + 1)) / 2;  // Formula for the sum of first n natural numbers
+        
+        // The missing number is the difference between the expected sum and the actual sum
+        return expectedSum - sum;
+    }
+};
