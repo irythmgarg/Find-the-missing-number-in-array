@@ -1,0 +1,58 @@
+Problem Statement:
+You are given an array nums of size n containing distinct integers in the range [0, n]. The array has one missing number. The task is to find the missing number.
+
+Approach:
+
+The sum of the first n natural numbers (including 0) is given by the formula:
+Sum of numbers from 0 to n =𝑛×(𝑛+1)2
+Sum of numbers from 0 to n=2
+n×(n+1)
+​
+ 
+If we calculate the sum of the elements in the given array, the missing number will simply be the difference between the sum of numbers from 0 to n and the sum of the elements in the array.
+Algorithm:
+
+Calculate the sum of the numbers from 0 to n using the formula above.
+Calculate the sum of all elements in the given array nums.
+The missing number is the difference between the expected sum and the actual sum.
+Complexity:
+
+Time Complexity: 
+𝑂(𝑛)
+O(n), where 𝑛
+n is the size of the array. We iterate through the array once to compute the sum.
+Space Complexity: 
+𝑂(1)
+O(1), since we only need a few variables to hold the sums and no extra space is used.
+
+Algorithm Explanation
+Initialization:
+
+First, we calculate the size of the array n (which is the largest number in the range).
+We then initialize a variable sum to 0 to keep track of the sum of the elements in the array.
+Summing the Elements:
+
+We iterate through the array nums and compute the sum of its elements. This is done using a for loop where sum += nums[i] adds each element to sum.
+Calculating the Expected Sum:
+
+Using the formula for the sum of the first n natural numbers, we calculate the expected sum of the numbers from 0 to n.
+expectedSum  =𝑛×(𝑛+1)2
+expectedSum= 
+2
+n×(n+1)
+​
+ 
+This formula gives the sum of the sequence if no numbers were missing.
+
+Finding the Missing Number:
+
+The missing number is the difference between the expected sum and the actual sum of the array.
+missing number
+=
+expectedSum
+−
+sum
+missing number=expectedSum−sum
+Return Result:
+
+The result (the missing number) is returned as the output.
